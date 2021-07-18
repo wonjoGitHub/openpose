@@ -6,8 +6,10 @@
 #include <openpose/utilities/openCv.hpp>
 #include <openpose_private/utilities/openCvMultiversionHeaders.hpp>
 #include <fstream>
+#include <iostream>
 
 namespace op
+using namespace std;
 {
     void reset(unsigned int& numberEmptyFrames, bool& trackingFps)
     {
