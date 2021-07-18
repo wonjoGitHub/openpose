@@ -5,6 +5,7 @@
 #include <openpose/utilities/fileSystem.hpp>
 #include <openpose/utilities/openCv.hpp>
 #include <openpose_private/utilities/openCvMultiversionHeaders.hpp>
+#include <fstream>
 
 namespace op
 {
