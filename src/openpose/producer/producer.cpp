@@ -9,7 +9,6 @@
 #include <iostream>
 
 namespace op
-using namespace std;
 {
     void reset(unsigned int& numberEmptyFrames, bool& trackingFps)
     {
@@ -118,10 +117,10 @@ using namespace std;
                 // Get frame
                 frames = getRawFrames();
                 // Get timestamp
-				ofstream outfile;
-				outfile.open("./timestamp.txt", std::ios_base::app);
-				outfile << timestamp << endl;
-				cout << timestamp << endl;
+				        std::ofstream outfile;
+				        outfile.open("./timestamp.txt", std::ios_base::app);
+				        outfile << timestamp << std::endl;
+				        std::cout << timestamp << std::endl;
                 // Undistort frames
                 // TODO: Multi-thread if > 1 frame
                 for (auto i = 0u ; i < frames.size() ; i++)
