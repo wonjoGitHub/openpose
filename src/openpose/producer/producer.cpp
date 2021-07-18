@@ -101,6 +101,7 @@ namespace op
         }
     }
 
+    using namespace std;
     std::vector<Matrix> Producer::getFrames()
     {
         try
@@ -117,10 +118,10 @@ namespace op
                 // Get frame
                 frames = getRawFrames();
                 // Get timestamp
-				        std::ofstream outfile;
-				        outfile.open("./timestamp.txt", std::ios_base::app);
-				        outfile << timestamp << std::endl;
-				        std::cout << timestamp << std::endl;
+				ofstream outfile;
+				outfile.open("./timestamp.txt", std::ios_base::app);
+				outfile << timestamp << endl;
+				cout << timestamp << endl;
                 // Undistort frames
                 // TODO: Multi-thread if > 1 frame
                 for (auto i = 0u ; i < frames.size() ; i++)
