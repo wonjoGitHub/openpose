@@ -476,4 +476,16 @@ namespace op
             return nullptr;
         }
     }
+    
+    double Producer::getTimestamp()
+	{
+		try
+		{
+			return get(CV_CAP_PROP_POS_MSEC);
+		}
+		catch (const std::exception& e)
+		{
+			error(e.what(), __LINE__, __FUNCTION__, __FILE__);
+		}
+	}
 }
