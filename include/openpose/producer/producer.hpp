@@ -125,6 +125,8 @@ namespace op
          * @param value double indicating the new value to be assigned.
          */
         void set(const ProducerProperty property, const double value);
+        
+        double getTimestamp();
 
     protected:
         /**
