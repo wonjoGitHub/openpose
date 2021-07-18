@@ -105,6 +105,8 @@ namespace op
         {
             std::vector<Matrix> frames;
 
+            long long timestamp = (long long) getTimestamp();
+
             if (isOpened())
             {
                 // If ProducerFpsMode::OriginalFps, then force producer to keep the frame rate of the frames producer
@@ -112,6 +114,11 @@ namespace op
                 keepDesiredFrameRate();
                 // Get frame
                 frames = getRawFrames();
+                // Get timestamp
+				        ofstream outfile;
+				        outfile.open("./timestamp.txt", std::ios_base::app);
+				        outfile << timestamp << endl;
+				        cout << timestamp << endl;
                 // Undistort frames
                 // TODO: Multi-thread if > 1 frame
                 for (auto i = 0u ; i < frames.size() ; i++)
@@ -476,7 +483,7 @@ namespace op
             return nullptr;
         }
     }
-    
+
     double Producer::getTimestamp()
 	{
 		try
