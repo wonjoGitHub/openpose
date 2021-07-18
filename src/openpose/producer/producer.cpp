@@ -115,10 +115,10 @@ namespace op
                 // Get frame
                 frames = getRawFrames();
                 // Get timestamp
-				        ofstream outfile;
-				        outfile.open("./timestamp.txt", std::ios_base::app);
-				        outfile << timestamp << endl;
-				        cout << timestamp << endl;
+				ofstream outfile;
+				outfile.open("./timestamp.txt", std::ios_base::app);
+				outfile << timestamp << endl;
+				cout << timestamp << endl;
                 // Undistort frames
                 // TODO: Multi-thread if > 1 frame
                 for (auto i = 0u ; i < frames.size() ; i++)
